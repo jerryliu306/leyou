@@ -1,0 +1,43 @@
+server:
+  port: 10010
+
+
+eureka:
+  instance:
+    instance-id: "${eureka.instance.ip-address}:${spring.application.name}:${server.port}"
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
+spring:
+  application:
+    name: api-gateway
+
+zuul:
+  # 路由前缀
+  prefix: /api
+  # 将商品微服务映射到/item/**
+  routes:
+    item-service: /item/**
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 熔断超时时长：5000ms
+            timeoutInMilliseconds: 5000
+
+ribbon:
+  # Ribbon链接超时时长
+  ConnectTimeout: 1000
+  # ribbon读取超时时长
+  ReadTimeout: 3500
+  # 当前服务重试次数
+  MaxAutoRetries: 0
+  # 切换服务重试次数
+  MaxAutoRetriesNextServer: 0
+

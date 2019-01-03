@@ -41,3 +41,18 @@ ribbon:
   # 切换服务重试次数
   MaxAutoRetriesNextServer: 0
 
+leyou:
+  cors:
+    allowedOrigins:
+      - http://manage.leyou.com
+    allowCredentials: true
+    allowedMethods:
+      - GET
+      - POST
+      - DELETE
+      - PUT
+      - OPTIONS
+    maxAge: 3600
+    filterPath: /**
+    allowedHeaders:
+      - "*"

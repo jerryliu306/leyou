@@ -19,8 +19,21 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
+
+    private final CategoryMapper categoryMapper;
     @Autowired
-    private CategoryMapper categoryMapper;
+    public CategoryServiceImpl(CategoryMapper categoryMapper) {
+        this.categoryMapper = categoryMapper;
+    }
+
+    @Override
+    public List<Category> queryByIds(List<Long> ids) {
+        List<Category> categoryList = categoryMapper.selectByIdList(ids);
+        if (CollectionUtils.isEmpty(categoryList)) {
+            throw new LyException(ExceptionInfoEnum.CATEGORY_NOT_FOUND);
+        }
+        return categoryList;
+    }
 
     @Override
     public List<Category> queryListByPid(Long pid) {

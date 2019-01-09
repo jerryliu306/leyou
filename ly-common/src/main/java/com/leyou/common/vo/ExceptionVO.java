@@ -2,6 +2,7 @@ package com.leyou.common.vo;
 
 import com.leyou.common.exceptions.LyException;
 import lombok.Getter;
+import lombok.ToString;
 import org.joda.time.DateTime;
 
 /**
@@ -10,6 +11,7 @@ import org.joda.time.DateTime;
  * @Date 2019/1/3 16:17
  */
 @Getter
+@ToString
 public class ExceptionVO {
 
     private Integer status;

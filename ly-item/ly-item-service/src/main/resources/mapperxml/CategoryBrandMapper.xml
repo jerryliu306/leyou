@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leyou.item.mapper.CategoryBrandMapper">
+    <resultMap id="BaseResultMap" type="com.leyou.item.pojo.CategoryBrand">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="category_id" jdbcType="BIGINT" property="categoryId"/>
+        <id column="brand_id" jdbcType="BIGINT" property="brandId"/>
+    </resultMap>
+</mapper>

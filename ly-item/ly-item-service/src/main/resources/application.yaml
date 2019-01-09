@@ -1,12 +1,13 @@
 server:
   port: 8081
 
+
 spring:
   application:
     name: item-service
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/leyou
+    url: jdbc:mysql://localhost:3306/leyou?useSSL=false
     username: root
     password: svse
 
@@ -19,3 +20,13 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
 
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  mapper-locations: classpath*:mapperxml/*.xml
+  type-aliases-package: com.leyou.item.pojo
+
+logging:
+  level:
+    com.leyou.item: debug

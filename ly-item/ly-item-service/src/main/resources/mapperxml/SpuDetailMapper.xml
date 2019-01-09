@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leyou.item.mapper.SpuDetailMapper">
+    <resultMap id="BaseResultMap" type="com.leyou.item.pojo.SpuDetail">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="spu_id" jdbcType="BIGINT" property="spuId"/>
+        <result column="generic_spec" jdbcType="VARCHAR" property="genericSpec"/>
+        <result column="special_spec" jdbcType="VARCHAR" property="specialSpec"/>
+        <result column="packing_list" jdbcType="VARCHAR" property="packingList"/>
+        <result column="after_service" jdbcType="VARCHAR" property="afterService"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.leyou.item.pojo.SpuDetail">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="description" jdbcType="LONGVARCHAR" property="description"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        spu_id, generic_spec, special_spec, packing_list, after_service
+    </sql>
+    <sql id="Blob_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        description
+    </sql>
+</mapper>

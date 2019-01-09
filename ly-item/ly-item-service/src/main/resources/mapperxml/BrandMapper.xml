@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leyou.item.mapper.BrandMapper">
+    <resultMap id="BaseResultMap" type="com.leyou.item.pojo.Brand">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="image" jdbcType="VARCHAR" property="image"/>
+        <result column="letter" jdbcType="CHAR" property="letter"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, `name`, image, letter
+    </sql>
+    <select id="queryBrandByCategoryId" resultMap="BaseResultMap">
+    select tb.id, tb.name, tb.image, tb.letter
+    from tb_category_brand tcb right join tb_brand tb
+    on tcb.brand_id = tb.id
+    where tcb.category_id = #{cid}
+  </select>
+</mapper>

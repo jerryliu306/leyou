@@ -13,15 +13,18 @@ import java.util.List;
 
 /**
  * @Author LiuJinmai
- * @Description
+ * @Description 商品分类管理
  * @Date 2019/1/3 18:46
  */
 @RestController
 @RequestMapping("category")
 public class CategoryController {
 
+    private final CategoryService categoryService;
     @Autowired
-    private CategoryService categoryService;
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 
     /**
      * 根据Pid查询商品种类

@@ -21,6 +21,7 @@ zuul:
   # 将商品微服务映射到/item/**
   routes:
     item-service: /item/**
+    upload-service: /upload/**
 
 hystrix:
   command:
@@ -56,3 +57,9 @@ leyou:
     filterPath: /**
     allowedHeaders:
       - "*"
+
+logging:
+  level:
+    com.leyou.gateway: debug;
+  # 当前项目目录下
+# file: log/gateway/log.log

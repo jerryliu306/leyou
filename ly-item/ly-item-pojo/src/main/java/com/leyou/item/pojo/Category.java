@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * @Author LiuJinmai
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 */
 @Data
 @Table(name = "`tb_category`")
-public class Category {
+public class Category implements Serializable {
     /**
      * 类目id
      */
